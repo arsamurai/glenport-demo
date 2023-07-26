@@ -1,0 +1,58 @@
+[data-aos] {
+	body[data-aos-easing="show-easing"] &,
+	&[data-aos][data-aos-easing="show-easing"] {
+		transition-timing-function: $show;
+	}
+}
+
+[data-aos="fade-up-20"] {
+	opacity: 0;
+	transform: translateY(20px);
+	transition-property: transform, opacity;
+
+	&.aos-animate {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+[data-aos="fade-down-20"] {
+	opacity: 0;
+	transform: translateY(-20px);
+	transition-property: transform, opacity;
+
+	&.aos-animate {
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+
+[data-aos="clip-right"] {
+	clip-path: inset(0% 100% -5% 0%);
+	transition-property: clip-path;
+
+	&.aos-animate {
+		clip-path: inset(0% 0% -5% 0%);
+		transition-property: clip-path;
+	}
+}
+
+[data-aos="clip-left"] {
+	clip-path: inset(0% 0% -5% 100%);
+	transition-property: clip-path;
+
+	&.aos-animate {
+		clip-path: inset(0% 0% -5% 0%);
+		transition-property: clip-path;
+	}
+}
+
+[data-aos="clip-down"] {
+	clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	transition-property: clip-path;
+
+	&.aos-animate {
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		transition-property: clip-path;
+	}
+}

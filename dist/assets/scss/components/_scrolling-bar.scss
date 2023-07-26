@@ -1,0 +1,74 @@
+.scrolling-bar {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  overflow: hidden;
+  position: absolute;
+
+	.block {
+		@include flex();
+	}
+
+  .block__text {
+    white-space: nowrap;
+    font-family: $Outfit_Bold, sans-serif;
+    font-size: 55px;
+    line-height: 55px;
+		text-transform: uppercase;
+    white-space: pre;
+  }
+
+  .block__image {
+		margin: 10px 22px 0;
+		svg {
+			width: 46px;
+			height: 44px;
+		}
+	}
+
+  &__block-wrapper {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    will-change: transform;
+    animation: scrollText 150s linear infinite -150s;
+
+    &:nth-child(2) {
+      animation: scrollTextNext 150s linear infinite -75s;
+    }
+  }
+
+
+  &__block-wrapper.reverse {
+    animation: reverseScrollText 150s linear infinite -150s;
+
+    &:nth-child(2) {
+      animation: reverseScrollTextNext 150s linear infinite -75s;
+    }
+  }
+
+  @include desktop-sm {
+		&__block-wrapper {
+			animation: scrollText 300s linear infinite -300s;
+	
+			&:nth-child(2) {
+				animation: scrollTextNext 300s linear infinite -150s;
+			}
+		}
+
+		&__block-wrapper.reverse {
+			animation: reverseScrollText 300s linear infinite -300s;
+	
+			&:nth-child(2) {
+				animation: reverseScrollTextNext 300s linear infinite -150s;
+			}
+		}
+
+    .block__text {
+      font-size: 200px;
+      line-height: 200px;
+    }
+  }
+}

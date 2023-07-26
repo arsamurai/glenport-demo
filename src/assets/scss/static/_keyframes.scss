@@ -1,0 +1,56 @@
+@keyframes slideUp {
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes zoomOut {
+	0% {
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+		transform: scale(1.1);
+	}
+  100% {
+    transform: scale(1);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@keyframes scrollTextNext {
+	0% {
+		transform: translate(-200%, 0);
+	}
+
+	100% {
+		transform: translate(0%, 0);
+	}
+}
+
+@keyframes scrollText {
+	0% {
+		transform: translate(-100%, 0);
+	}
+
+	100% {
+		transform: translate(100%, 0);
+	}
+}
+
+@keyframes reverseScrollTextNext {
+	0% {
+		transform: translate(0, 0);
+	}
+
+	100% {
+		transform: translate(-200%, 0);
+	}
+}
+
+@keyframes reverseScrollText {
+	0% {
+		transform: translate(100%, 0);
+	}
+
+	100% {
+		transform: translate(-100%, 0);
+	}
+}

@@ -1,0 +1,18 @@
+.header {
+	padding: 12px 0;
+	background-color: $white-bg;
+	position: fixed;
+	z-index: 999;
+	top: 0;
+	right: 0;
+	left: 0;
+	&__inner {
+		@include flex(space-between, center)
+	}
+	&__logo {
+		cursor: pointer;
+	}
+	&__logo-img {
+		height: 32px;
+	}
+}

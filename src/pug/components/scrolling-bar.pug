@@ -1,0 +1,14 @@
+mixin scrollingBar(var1, var2, text1, text2, logo, reverse)
+	.scrolling-bar&attributes(attributes)
+		.scrolling-bar__block-wrapper(class=reverse && 'reverse')
+			while var1++ < 10
+				.block
+					span.block__text=text1
+					if logo
+						+logoSticker.block__image
+		.scrolling-bar__block-wrapper(class=reverse && 'reverse')
+			while var2++ < 10
+				.block
+					span.block__text=text1
+					if logo
+						+logoSticker.block__image

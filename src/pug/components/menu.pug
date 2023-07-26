@@ -1,0 +1,14 @@
+-
+  var links = [
+    {title: 'Facts about us', href: '#advantages'},
+    {title: 'How we work?', href: '#howWeWork'},
+    //{title: 'Work steps', href: '#steps'},
+    {title: 'Map', href: '#map'},
+    {title: 'Partners', href: '#partners'},
+    {title: 'Contacts', href: '#footer'},
+  ]
+
+nav.menu(data-menu)
+  ul.menu__list
+    each link in links
+      li.menu__list-item(data-scroll-to=link.href)= link.title

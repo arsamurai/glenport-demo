@@ -1,0 +1,41 @@
+.map {
+	padding-bottom: 64px;
+	&__title {
+		margin-bottom: 24px;
+	}
+	&__list-item {
+		@include flex(flex-start);
+		margin-bottom: 16px;	
+	}
+	&__list-item__title {
+		padding-left: 16px;
+	}
+	&__list-item__image-wrapper	{
+		@include size(32px, 32px, 50%);
+		@include flex();
+		background-color: $primary-900;
+	}
+	&__image {
+		text-align: center;
+	}
+	&__countries {
+		display: grid;
+		grid-template-columns: repeat(4, 3fr);
+		justify-content: center;
+		gap: 8px;
+		margin-top: 16px;
+	}
+	&__country {
+		@include flex(flex-start, center);
+		&-title {
+			font-size: 14px;
+			line-height: 24px;
+			color: $primary-800;
+			padding-left: 8px;
+		}
+		&-image {
+			width: 16px;
+			height: 12px;
+		}
+	}
+}

@@ -1,0 +1,23 @@
+.footer {
+	text-align: center;
+	padding-bottom: 20px;
+	&__links {
+		margin-top: 40px;
+	}
+	&__link {
+		margin-bottom: 40px;
+		&-title {
+			margin-bottom: 12px;
+		}
+		&-href {
+			font-size: 12px;
+			line-height: 24px;
+		}
+	}
+	&__copy {
+		font-size: 12px;
+		line-height: 24px;
+		color: $primary-950;
+		opacity: .4 !important;
+	}
+}

@@ -1,0 +1,26 @@
+.advantages {
+	position: relative;
+  padding-bottom: 175px;
+	margin-bottom: 195px;
+  &__title, &__list-item {
+    margin-bottom: 40px;
+  }
+  &__item {
+		&-title {
+			margin-bottom: 12px;
+		}
+  }
+	&__additional {
+		display: flex;
+		flex-direction: column;
+		&-image {
+			//order: -1;
+			height: 200px;
+			width: 100%;
+			margin-bottom: 64px;
+		}
+	}
+	&__scrolling-bar:last-child {
+		bottom: -75px;
+	}
+}

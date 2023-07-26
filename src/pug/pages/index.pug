@@ -1,0 +1,122 @@
+extends ../layouts/layout
+
+include ../helpers/_mixins
+include ../helpers/_icons
+
+include ../components/scrolling-bar
+
+block vars
+  - var k = 0
+  - var l = 0
+  - var q = 0
+  - var w = 0
+  - var page = 'glenport'
+  - var title = 'Glenport AG'
+  - var infoScrollingBar = 'Impact Glenport  AG'
+  - var infoScrollingBar2 = 'Arbel Barliyat Hububat Sanayi ve Ticaret A.S.          Reka Bitlisel Yaglar San ve Tic A.S.          Ameropa Grains S.A.'
+  - var infoScrollingBar3 = 'Cargill Agricultura SRL          Cofco International Romania SRL          Crown Flour Mills          Miloubar Cyprus Ltd'
+  -
+    var advantages = [
+      {title: "Expertise", text: "15 years in the market"},
+      {title: "Total turnover", text: "500-700 thousand metric tons per year"},
+      {title: "Main products", text: "Corn, wheat, barley, rape seeds, sunflower seeds, peas"}
+    ]
+    var howWeWork = [
+      {title: "Grain purchase", img: "icons/wheat.svg", alt: "wheat"},
+      {title: "Delivery to the grain elevator", img: "icons/truck.svg", alt: "truck"},
+      {title: "Storage of grain ", img: "icons/warehouse.svg", alt: "warehouse"},
+      {title: "Paperwork", img: "icons/paper.svg", alt: "paper"},
+      {title: "Vessel chartering", img: "icons/freight.svg", alt: "freight"},
+      {title: "Fast logistics of grain from elevator to the port", img: "icons/grain-elevator.svg", alt: "grain-elevator"},
+      {title: "Trains and trucks logistics", img: "icons/train.svg", alt: "train"},
+      {title: "Loading grain on ships", img: "icons/shipyard.svg", alt: "shipyard"},
+      {title: "Shipment to the end user port", img: "icons/port.svg", alt: "port"},
+    ]
+    var ports = ["Port of Odessa", "Port of Ismail", "Port of Rennie"]
+    var countries = [
+      {title: "Ukraine", img: "countries/ukraine.svg", alt: "ukraine"},
+      {title: "Bulgaria", img: "countries/bulgaria.svg", alt: "bulgaria"},
+      {title: "Romania", img: "countries/romania.svg", alt: "romania"},
+      {title: "Turkey", img: "countries/turkey.svg", alt: "turkey"},
+      {title: "Spain", img: "countries/spain.svg", alt: "spain"},
+      {title: "Cyprus", img: "countries/cyprus.svg", alt: "cyprus"},
+      {title: "Italy", img: "countries/italy.svg", alt: "italy"},
+      {title: "Lebanon", img: "countries/lebanon.svg", alt: "lebanon"},
+    ]
+
+append content
+  main#main
+    // PREVIEW SECTION
+    section#preview.preview
+      .container
+        .preview__inner 
+          .preview__main 
+            .preview__main-title-wrapper
+              h1.preview__main-title= title 
+            p.preview__main-text(data-aos="fade-up-20" data-aos-delay="200") Is part of group of Ukrainian and foreign companies with 15 years experience in international grain trading. Our main activity – trading of agricultural grains and fertilisers, organising and providing logistical services - from the farmer to the final consumer. Glenport covers the whole supply chain from acquisition of agricultural products through warehousing, transportation by river and sea, documentation and financial modelling, up to point of selling.
+            p.preview__main-text(data-aos="fade-up-20" data-aos-delay="300") Our main values are high level trade service, cooperation and integration, covering all processes from the farmer to the final consumer.
+          .preview__images
+            .preview__sticker(data-aos="fade" data-aos-delay="600")
+              +logoSticker.preview__sticker-img
+            .preview__image-wrapper.preview__image-1-wrapper
+              +image('ship.jpg', 'ship').preview__image
+            .preview__image-wrapper.preview__image-2-wrapper
+              +image('cargo.jpg', 'cargo').preview__image
+          .preview__whyUs
+            .preview__whyUs-title-wrapper
+              h4.preview__whyUs-title(data-aos="fade-up") Why us?
+            p.preview__whyUs-text(data-aos="fade-up-20" data-aos-delay="500") We fulfill contract terms regardless of any external factors. From grain elevators to loading on the ship in a matter of days.
+    // ADVANTAGES SECTION
+    section#advantages.advantages 
+      .container 
+        .advantages__inner
+          .advantages__main
+            h2.advantages__title(data-aos="fade-up-20" data-aos-delay="100") Exclusively Ukrainian grains
+            ul.advantages__list 
+              each item in advantages
+                li.advantages__list-item(data-aos="clip-right" data-aos-delay=`${(index + 1) * 200}`)
+                  h4.advantages__item-title= item.title
+                  p.advantages__item-text= item.text
+          .advantages__additional
+            +image('grains.jpg', 'grains')(data-aos="fade-down-20" data-aos-delay="200").advantages__additional-image
+            h3.advantages__additional-title(data-aos="fade-up-20" data-aos-delay="300") We fulfill contractual conditions regardless of external factors
+      +scrollingBar(k, l, infoScrollingBar, infoScrollingBar, logo = true).advantages__scrolling-bar(data-aos="clip-right" data-aos-delay="200")
+      +scrollingBar(q, w, infoScrollingBar, infoScrollingBar, logo = true, reverse = true).advantages__scrolling-bar(data-aos="clip-left" data-aos-delay="300")
+    // HowWeWork SECTION
+    section#howWeWork.howWeWork 
+      .container 
+        .howWeWork__inner 
+          h2.howWeWork__title(data-aos="fade-up-20" data-aos-delay="100") How we work?
+          ul.howWeWork__list 
+            each item in howWeWork
+              li.howWeWork__list-item
+                span
+                +image(item.img, item.alt).howWeWork__item-image
+                h4.howWeWork__item-title= item.title
+    // MAP SECTION
+    section#map.map 
+      .container 
+        .map__inner
+          .map__info
+            h2.map__title(data-aos="fade-up-20" data-aos-delay="100") Working map
+            ul.map__list
+              each item, index in ports 
+                li.map__list-item(data-aos="clip-right" data-aos-delay=`${(index + 1) * 200}`)
+                  .map__list-item__image-wrapper
+                    +anchor.map__list-item__image
+                  h5.map__list-item__title= item
+            +map.map__image.map__image--mobile(data-aos='fade-down-20' data-aos-delay="200")
+            ul.map__countries(data-aos='fade-up-20' data-aos-delay="300")
+              each item in countries 
+                li.map__country
+                  +image(item.img, item.alt).map__country-image
+                  h5.map__country-title= item.title
+          //.map__image.map__image--desktop
+    // PARTNERS SECTION
+    section#partners.partners 
+      .container 
+        .partners_inner 
+          h2.partners__title(data-aos="fade-up-20" data-aos-delay="100") Partners
+      +scrollingBar(k, l, infoScrollingBar2, infoScrollingBar2, logo = false).partners__scrolling-bar(data-aos="clip-right" data-aos-delay="200")
+      +scrollingBar(q, w, infoScrollingBar3, infoScrollingBar3, logo = false, reverse = true).partners__scrolling-bar(data-aos="clip-left" data-aos-delay="300")
+
