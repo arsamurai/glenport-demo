@@ -36,13 +36,16 @@
 		}
 		&__link {
 			margin: 0 16px 80px;
-			width: 452px;
+			max-width: 452px;
+			width: 100%;
 			&-title {
 				margin-bottom: 24px;
 			}
 		}
 		&__link:nth-child(2) {
-			width: 296px;
+			max-width: 296px;
+			width: 100%;
+
 		}
 		&__copy {
 			font-size: 18px;

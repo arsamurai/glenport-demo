@@ -14,7 +14,7 @@ addEventListener('load', async () => {
   };
 
   const setMenuState = (activate) => {
-    if (window.clientWidth < 992) {
+    if (window.innerWidth < 992) {
       if (activate) {
         const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
         body.style.position = 'fixed';

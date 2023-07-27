@@ -49,8 +49,11 @@
     &-image {
       width: 16px;
       height: 12px;
-    }
+    }	
   }
+	.map__country:nth-child(3) .map__country-image {
+		margin-left: 7px;
+	}
 
   @include table {
 		max-width: 1608px;
