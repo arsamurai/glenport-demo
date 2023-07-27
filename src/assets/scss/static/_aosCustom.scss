@@ -56,3 +56,27 @@
 		transition-property: clip-path;
 	}
 }
+
+[data-aos="scale-100"] {
+	transform: scale(0);
+	transition-property: transform;
+
+	&.aos-animate {
+		transform: scale(1);
+		transition-property: transform;
+	}
+}
+
+[data-aos="slide-up"] {
+	&.aos-animate {
+		bottom: 0 !important;
+	}
+}
+
+[data-aos="anim-line-to-country"] {
+	stroke-dasharray: 2200;
+	stroke-dashoffset: 2200;
+	&.aos-animate {
+		stroke-dashoffset: 0;
+	}
+}

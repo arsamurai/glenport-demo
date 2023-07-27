@@ -1,23 +1,61 @@
 .footer {
-	text-align: center;
-	padding-bottom: 20px;
-	&__links {
-		margin-top: 40px;
-	}
-	&__link {
-		margin-bottom: 40px;
-		&-title {
-			margin-bottom: 12px;
+  text-align: center;
+  padding-bottom: 20px;
+  &__links {
+    margin-top: 40px;
+  }
+  &__link {
+    margin-bottom: 40px;
+    &-title {
+      margin-bottom: 12px;
+    }
+    &-href {
+      font-size: 12px;
+      line-height: 24px;
+    }
+  }
+  &__copy {
+    font-size: 12px;
+    line-height: 24px;
+    color: $primary-950;
+    opacity: 0.4 !important;
+  }
+
+  @include table {
+		padding-bottom: 120px;
+    &__logo-img {
+			height: 48px;
+      svg {
+        width: 340px;
+        height: 48px;
+      }
+    }
+		&__links {
+			margin-top: 80px;
+			@include flex(center, flex-start);
 		}
-		&-href {
-			font-size: 12px;
-			line-height: 24px;
+		&__link {
+			margin: 0 16px 80px;
+			width: 452px;
+			&-title {
+				margin-bottom: 24px;
+			}
 		}
-	}
-	&__copy {
-		font-size: 12px;
-		line-height: 24px;
-		color: $primary-950;
-		opacity: .4 !important;
+		&__link:nth-child(2) {
+			width: 296px;
+		}
+		&__copy {
+			font-size: 18px;
+			line-height: 26px;
+		}
+  }
+	@include desktop {
+		&__logo-img {
+			height: 64px;
+      svg {
+        width: 450px;
+        height: 64px;
+      }
+    }
 	}
 }

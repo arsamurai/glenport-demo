@@ -1,11 +1,11 @@
 function handleScroll() {
   const listItems = document.querySelectorAll('.howWeWork__list-item');
 
-  listItems.forEach(item => {
+  listItems.forEach((item) => {
     const itemPosition = item.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    const scrollPercentage = 1 - (itemPosition - windowHeight * .75) / itemPosition;
+    const scrollPercentage = 1 - (itemPosition - windowHeight * 0.7) / itemPosition;
 
     if (scrollPercentage > 0 && scrollPercentage <= 1) {
       item.classList.remove('active');
@@ -15,6 +15,6 @@ function handleScroll() {
   });
 }
 
-window.addEventListener('scroll', handleScroll);
+addEventListener('scroll', handleScroll);
 
 handleScroll();

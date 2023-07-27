@@ -1,38 +1,64 @@
-.partners {
+#partners {
   padding-bottom: 60px;
   margin-bottom: 116px;
-  &__scrolling-bar {
-		&:last-child {
-			bottom: -56px;
-		}
+  .partners__scrolling-bar:last-child {
+    bottom: -56px;
+  }
 
+  .block__text {
+    font-family: $Outfit_Bold, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: unset;
+    color: $primary-300;
+  }
+
+  .scrolling-bar__block-wrapper {
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    will-change: transform;
+    animation: scrollText 350s linear infinite -350s;
+
+    &:nth-child(2) {
+      animation: scrollTextNext 350s linear infinite -175s;
+    }
+  }
+
+  .scrolling-bar__block-wrapper.reverse {
+    animation: reverseScrollText 350s linear infinite -350s;
+
+    &:nth-child(2) {
+      animation: reverseScrollTextNext 350s linear infinite -175s;
+    }
+  }
+
+  @include table {
+    padding-bottom: 95px;
+    margin-bottom: 243px;
+    .partners__inner {
+      max-width: 1608px;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .partners__scrolling-bar:last-child {
+      bottom: -95px;
+    }
     .block__text {
-      font-family: $Outfit_Bold, sans-serif;
-      font-size: 18px;
-      line-height: 24px;
-      text-transform: unset;
-      color: $primary-300;
+      font-size: 29px;
+      line-height: 36px;
     }
-
-    .scrolling-bar__block-wrapper {
-      height: 100%;
-      display: flex;
-      flex-wrap: nowrap;
-      align-items: center;
-      will-change: transform;
-      animation: scrollText 350s linear infinite -350s;
-
-      &:nth-child(2) {
-      	animation: scrollTextNext 350s linear infinite -175s;
-      }
+  }
+  @include desktop {
+    padding-bottom: 130px;
+    margin-bottom: 370px;
+    .partners__scrolling-bar:last-child {
+      bottom: -130px;
     }
-
-    .scrolling-bar__block-wrapper.reverse {
-      animation: reverseScrollText 350s linear infinite -350s;
-
-      &:nth-child(2) {
-        animation: reverseScrollTextNext 350s linear infinite -175s;
-      }
+    .block__text {
+      font-size: 40px;
+      line-height: 48px;
     }
   }
 }

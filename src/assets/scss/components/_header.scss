@@ -9,10 +9,14 @@
 	&__inner {
 		@include flex(space-between, center)
 	}
-	&__logo {
-		cursor: pointer;
-	}
 	&__logo-img {
 		height: 32px;
+	}
+
+	@include desktop {
+		&__logo-img {
+			height: 40px;
+		}
+		padding: 24px 0;
 	}
 }

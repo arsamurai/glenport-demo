@@ -1,17 +1,17 @@
-@keyframes slideUp {
+@keyframes zoomOut {
   to {
-    bottom: 0;
+    transform: scale(1);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
-@keyframes zoomOut {
+@keyframes animLineToCountry {
 	0% {
-		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-		transform: scale(1.1);
+		stroke-dasharray: 2200;
+    stroke-dashoffset: 2200;
 	}
   100% {
-    transform: scale(1);
-		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    stroke-dashoffset: 0;
   }
 }
 

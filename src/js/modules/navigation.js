@@ -3,17 +3,29 @@ addEventListener('load', async () => {
   const burger = document.querySelector('[data-burger-btn]');
   const menu = document.querySelector('[data-menu]');
   const scrollLinks = document.querySelectorAll('[data-scroll-to]');
+  const body = document.body;
 
   const goTo = (sectionId) => {
-    const top = document.getElementById(sectionId)?.offsetTop - 50;
-    console.log(top);
-    window?.scrollTo({
+    const top = document.getElementById(sectionId)?.offsetTop - 88;
+    window.scrollTo({
       top,
       behavior: 'smooth'
     });
   };
 
   const setMenuState = (activate) => {
+    if (window.clientWidth < 992) {
+      if (activate) {
+        const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+        body.style.position = 'fixed';
+        body.style.top = `-${scrollY}`;
+      } else {
+        const scrollY = body.style.top;
+        body.style.position = '';
+        body.style.top = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
+      }
+    }
     const action = activate ? 'add' : 'remove';
 
     burger?.classList[action]('active');
@@ -21,11 +33,12 @@ addEventListener('load', async () => {
   };
 
   logoBtn.addEventListener('click', () => {
-    window?.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   burger.addEventListener('click', ({ currentTarget }) => {
     const isActiveMenu = currentTarget.classList.contains('active');
+
     if (isActiveMenu) {
       setMenuState(false);
     } else {
@@ -41,4 +54,8 @@ addEventListener('load', async () => {
       goTo(sectionId);
     });
   });
+});
+
+addEventListener('scroll', () => {
+  document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
 });
