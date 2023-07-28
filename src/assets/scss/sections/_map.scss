@@ -88,13 +88,6 @@
 				width: 100%;
 				height: 100%;
 			}
-			.line-to-country {
-				fill: none;
-				stroke: $primary-600;
-				stroke-width: 4px;
-				//stroke-dasharray: 2200;
-    		//stroke-dashoffset: 2200;
-			}
 			.country {
 				cursor: pointer;
 				transition: $transition;
