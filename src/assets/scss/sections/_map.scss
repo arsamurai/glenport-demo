@@ -24,8 +24,10 @@
 	}
   .map__image {
     text-align: center;
-		&--mobile svg {
-			width: 100%;
+		&--mobile img {
+			width: 350px;
+			height: 230px;
+			object-fit: contain;
 		}
 		&--desktop {
 			display: none;
@@ -94,9 +96,6 @@
 			}
 			.country:hover {
 				fill: $primary-500;
-			}
-			.country--ukraine:hover {
-				fill: #D2B500;
 			}
     }
   }

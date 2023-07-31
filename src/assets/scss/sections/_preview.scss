@@ -32,6 +32,9 @@
     position: absolute;
     top: -16px;
     left: 0;
+    animation: rotate2d 3s linear 4s infinite;
+    height: 64px;
+    width: 66px;
     svg {
       height: 64px;
       width: 66px;
@@ -116,7 +119,7 @@
         bottom: -38px;
       }
     }
-    .preview__sticker svg {
+    .preview__sticker, .preview__sticker svg {
       width: 86px;
       height: 84px;
     }
@@ -147,6 +150,8 @@
       left: auto;
       bottom: -102px;
       right: 0;
+      width: 104px;
+      height: 100px;
       svg {
         width: 104px;
         height: 100px;

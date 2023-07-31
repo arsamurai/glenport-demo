@@ -9,7 +9,6 @@
     @include flex();
   }
   .block__text {
-    white-space: nowrap;
     font-family: $Outfit_Bold, sans-serif;
     font-size: 55px;
     line-height: 55px;

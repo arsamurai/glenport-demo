@@ -32,7 +32,7 @@ block vars
       {title: 'Loading grain on ships', img: 'icons/shipyard.svg', alt: 'shipyard'},
       {title: 'Shipment to the end user port', img: 'icons/port.svg', alt: 'port'},
     ]
-    var ports = ['Port of Odessa', 'Port of Ismail', 'Port of Rennie']
+    var ports = ['Port of Odesa', 'Port of Izmail', 'Port of Reni']
     var countries = [
       {title: 'Ukraine', img: 'countries/ukraine.svg', alt: 'ukraine'},
       {title: 'Romania', img: 'countries/romania.svg', alt: 'romania'},
@@ -56,7 +56,7 @@ append content
             p.preview__main-text(data-aos='fade-up-20' data-aos-delay='400') Is part of group of Ukrainian and foreign companies with 15 years experience in international grain trading. Our main activity – trading of agricultural grains and fertilisers, organising and providing logistical services - from the farmer to the final consumer. Glenport covers the whole supply chain from acquisition of agricultural products through warehousing, transportation by river and sea, documentation and financial modelling, up to point of selling.
             p.preview__main-text(data-aos='fade-up-20' data-aos-delay='600') Our main values are high level trade service, cooperation and integration, covering all processes from the farmer to the final consumer.
           .preview__images
-            .preview__sticker(data-aos='scale-100' data-aos-delay='3000')
+            .preview__sticker(data-aos='scale-100' data-aos-delay='2000')
               +logoSticker.preview__sticker-img
             .preview__image-wrapper.preview__image-1-wrapper
               +image('ship.jpg', 'ship').preview__image.preview__image-1
@@ -106,7 +106,8 @@ append content
                     +anchor.map__list-item__image
                   h5.map__list-item__title= item
             .map__countries-wrapper
-              +mapMobile.map__image.map__image--mobile(data-aos='fade-down-20' data-aos-delay='200')
+              .map__image.map__image--mobile(data-aos='fade-down-20' data-aos-delay='200')
+                +image('mapMobile.jpg', 'map')
               ul.map__countries(data-aos='fade-up-20' data-aos-delay='300')
                 each item in countries 
                   li.map__country
