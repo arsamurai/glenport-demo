@@ -12,4 +12,12 @@ const aosConfig = {
 
 addEventListener('load', async () => {
   AOS.init(aosConfig);
+
+  const sticker = document.querySelector('[data-sticker]');
+  if (window.innerWidth < 1200) {
+    sticker.classList.add("mobileAnim");
+  } else {
+    sticker.classList.add("desktopAnim");
+  }
+
 });

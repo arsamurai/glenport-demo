@@ -5,6 +5,12 @@
   }
 }
 
+@keyframes scale100 {
+	to {
+    transform: scale(1);
+  }
+}
+
 @keyframes animLineToCountry {
 	0% {
 		stroke-dasharray: 2200;

@@ -49,7 +49,6 @@ addEventListener('load', async () => {
   scrollLinks.forEach((link) => {
     link.addEventListener('click', ({ currentTarget }) => {
       const sectionId = currentTarget.getAttribute('data-scroll-to').replace('#', '');
-      console.log(sectionId);
       setMenuState(false);
       goTo(sectionId);
     });

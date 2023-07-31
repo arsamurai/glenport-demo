@@ -56,7 +56,7 @@ append content
             p.preview__main-text(data-aos='fade-up-20' data-aos-delay='400') Is part of group of Ukrainian and foreign companies with 15 years experience in international grain trading. Our main activity – trading of agricultural grains and fertilisers, organising and providing logistical services - from the farmer to the final consumer. Glenport covers the whole supply chain from acquisition of agricultural products through warehousing, transportation by river and sea, documentation and financial modelling, up to point of selling.
             p.preview__main-text(data-aos='fade-up-20' data-aos-delay='600') Our main values are high level trade service, cooperation and integration, covering all processes from the farmer to the final consumer.
           .preview__images
-            .preview__sticker(data-aos='scale-100' data-aos-delay='2000')
+            .preview__sticker(data-sticker)
               +logoSticker.preview__sticker-img
             .preview__image-wrapper.preview__image-1-wrapper
               +image('ship.jpg', 'ship').preview__image.preview__image-1
@@ -71,22 +71,22 @@ append content
       .container 
         .advantages__inner
           .advantages__main
-            h2.advantages__title(data-aos='fade-up-20' data-aos-delay='100') Exclusively Ukrainian grains
+            h2.advantages__title Exclusively Ukrainian grains
             ul.advantages__list 
               each item in advantages
-                li.advantages__list-item(data-aos='clip-right' data-aos-delay=`${(index + 1) * 200}`)
+                li.advantages__list-item
                   h4.advantages__item-title= item.title
                   p.advantages__item-text= item.text
           .advantages__additional
-            +image('grains.jpg', 'grains')(data-aos='fade-down-20' data-aos-delay='200').advantages__additional-image
-            h3.advantages__additional-title(data-aos='fade-up-20' data-aos-delay='300') We fulfill contractual conditions regardless of external factors
+            +image('grains.jpg', 'grains').advantages__additional-image
+            h3.advantages__additional-title We fulfill contractual conditions regardless of external factors
       +scrollingBar(k, l, infoScrollingBar, infoScrollingBar, logo = true).advantages__scrolling-bar
       +scrollingBar(q, w, infoScrollingBar, infoScrollingBar, logo = true, reverse = true).advantages__scrolling-bar
     // HowWeWork SECTION
     section#howWeWork.howWeWork 
       .container 
         .howWeWork__inner
-          h2.howWeWork__title(data-aos='fade-up-20' data-aos-delay='100') How we work?
+          h2.howWeWork__title How we work?
           ul.howWeWork__list 
             each item in howWeWork
               li.howWeWork__list-item
@@ -98,27 +98,27 @@ append content
       .container 
         .map__inner
           .map__info
-            h2.map__title(data-aos='fade-up-20' data-aos-delay='100') Working map
+            h2.map__title Working map
             ul.map__list
               each item, index in ports 
-                li.map__list-item(data-aos='clip-right' data-aos-delay=`${(index + 1) * 200}`)
+                li.map__list-item
                   .map__list-item__image-wrapper
                     +anchor.map__list-item__image
                   h5.map__list-item__title= item
             .map__countries-wrapper
-              .map__image.map__image--mobile(data-aos='fade-down-20' data-aos-delay='200')
+              .map__image.map__image--mobile
                 +image('mapMobile.jpg', 'map')
-              ul.map__countries(data-aos='fade-up-20' data-aos-delay='300')
+              ul.map__countries
                 each item in countries 
                   li.map__country
                     +image(item.img, item.alt).map__country-image
                     h5.map__country-title= item.title
           .map__image.map__image--desktop
-            +mapDesktop.map__image.map__image--desktop(data-aos='fade-down-20' data-aos-delay='200')
+            +mapDesktop.map__image.map__image--desktop
     // PARTNERS SECTION
     section#partners.partners
       .container 
         .partners__inner 
-          h2.partners__title(data-aos='fade-up-20' data-aos-delay='100') Partners
+          h2.partners__title Partners
       +scrollingBar(k, l, infoScrollingBar2, infoScrollingBar2, logo = false).partners__scrolling-bar
       +scrollingBar(q, w, infoScrollingBar3, infoScrollingBar3, logo = false, reverse = true).partners__scrolling-bar
