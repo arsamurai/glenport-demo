@@ -107,14 +107,14 @@ append content
                   h5.map__list-item__title= item
             .map__countries-wrapper
               .map__image.map__image--mobile
-                +image('mapMobile.jpg', 'map')
+                +mapMobile
               ul.map__countries
                 each item in countries 
                   li.map__country
                     +image(item.img, item.alt).map__country-image
                     h5.map__country-title= item.title
           .map__image.map__image--desktop
-            +mapDesktop.map__image.map__image--desktop
+            +mapDesktop
     // PARTNERS SECTION
     section#partners.partners
       .container 
