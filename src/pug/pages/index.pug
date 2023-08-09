@@ -49,50 +49,59 @@ append content
     // PREVIEW SECTION
     section#preview.preview
       .container
-        .preview__inner 
-          .preview__main 
-            .preview__main-title-wrapper
-              h1.preview__main-title(data-aos='slide-up' data-aos-delay='200')= title 
-            p.preview__main-text(data-aos='fade-up-20' data-aos-delay='400') Is part of group of Ukrainian and foreign companies with 15 years experience in international grain trading. Our main activity – trading of agricultural grains and fertilisers, organising and providing logistical services - from the farmer to the final consumer. Glenport covers the whole supply chain from acquisition of agricultural products through warehousing, transportation by river and sea, documentation and financial modelling, up to point of selling.
-            p.preview__main-text(data-aos='fade-up-20' data-aos-delay='600') Our main values are high level trade service, cooperation and integration, covering all processes from the farmer to the final consumer.
-          .preview__images
-            .preview__sticker(data-sticker)
-              +logoSticker.preview__sticker-img
-            .preview__image-wrapper.preview__image-1-wrapper
-              +image('ship.jpg', 'ship').preview__image.preview__image-1
-            .preview__image-wrapper.preview__image-2-wrapper
-              +image('cargo.jpg', 'cargo').preview__image.preview__image-2
-          .preview__whyUs
-            .preview__whyUs-title-wrapper
-              h4.preview__whyUs-title(data-aos='slide-up' data-aos-delay='800')  Why us?
-            p.preview__whyUs-text(data-aos='fade-up-20' data-aos-delay='1000') We fulfill contract terms regardless of any external factors. <br /> From grain elevators to loading on the ship in a matter of days.
+        .preview__inner
+          .preview__title-wrapper
+            h1.preview__title(data-aos='slide-up' data-aos-delay='200')= title 
+          .preview__info
+            .preview__main
+              p.preview__main-text(data-aos='fade-up-20' data-aos-delay='400') Is part of group of Ukrainian and foreign companies with 15 years experience in international grain trading. Our main activity – trading of agricultural grains and fertilisers, organising and providing logistical services - from the farmer to the final consumer. Glenport covers the whole supply chain from acquisition of agricultural products through warehousing, transportation by river and sea, documentation and financial modelling, up to point of selling.
+              p.preview__main-text(data-aos='fade-up-20' data-aos-delay='600') Our main values are high level trade service, cooperation and integration, covering all processes from the farmer to the final consumer.
+              .preview__image-wrapper.preview__image-wrapper-1.preview__images--desktop
+                +image('preview-1.png', 'combine').preview__image.preview__image-1
+            .preview__images.preview__images--mobile
+              .preview__sticker
+                +logoSticker.preview__sticker-img
+              .preview__image-wrapper.preview__image-wrapper-1
+                +image('preview-1.png', 'combine').preview__image.preview__image-1
+              .preview__image-wrapper.preview__image-wrapper-2
+                +image('preview-2.png', 'ship').preview__image.preview__image-2
+            .preview__whyUs
+              .preview__whyUs-info
+                .preview__whyUs-title-wrapper
+                  h4.preview__whyUs-title(data-aos='slide-up' data-aos-delay='800')  Why us?
+                p.preview__whyUs-text(data-aos='fade-up-20' data-aos-delay='1000') We fulfill contract terms regardless of any external factors. <br /> From grain elevators to loading on the ship in a matter of days.
+              .preview__sticker.preview__images--desktop
+                +logoSticker.preview__sticker-img
+              .preview__image-wrapper.preview__image-wrapper-2.preview__images--desktop
+                +image('preview-2.png', 'ship').preview__image.preview__image-2
     // ADVANTAGES SECTION
     section#advantages.advantages
       .container 
         .advantages__inner
           .advantages__main
             h2.advantages__title Exclusively Ukrainian grains
-            ul.advantages__list 
+            ul.advantages__list
               each item in advantages
                 li.advantages__list-item
                   h4.advantages__item-title= item.title
                   p.advantages__item-text= item.text
-          .advantages__additional
-            +image('grains.jpg', 'grains').advantages__additional-image
-            h3.advantages__additional-title We fulfill contractual conditions regardless of external factors
+            h4.advantages__text We fulfill contractual conditions regardless of external factors
+          .advantages__image-wrapper
+            +image('grains.png', 'grains').advantages__image
       +scrollingBar(k, l, infoScrollingBar, infoScrollingBar, logo = true).advantages__scrolling-bar
       +scrollingBar(q, w, infoScrollingBar, infoScrollingBar, logo = true, reverse = true).advantages__scrolling-bar
     // HowWeWork SECTION
-    section#howWeWork.howWeWork 
+    section#howWeWork.howWeWork
       .container 
         .howWeWork__inner
           h2.howWeWork__title How we work?
           ul.howWeWork__list 
-            each item in howWeWork
-              li.howWeWork__list-item
-                span
-                +image(item.img, item.alt).howWeWork__item-image
-                h4.howWeWork__item-title= item.title
+            each item, index in howWeWork
+              li.howWeWork__list-item(data-aos='fade-up' data-aos-delay=`${(index + 1) * 100}`)
+                h2.howWeWork__item-num= `${index+1}`
+                .howWeWork__item-main
+                  +image(item.img, item.alt).howWeWork__item-image
+                  p.howWeWork__item-title= item.title
     // MAP SECTION
     section#map.map 
       .container 

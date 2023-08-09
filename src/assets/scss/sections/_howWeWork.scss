@@ -1,172 +1,49 @@
 #howWeWork {
   padding-bottom: 64px;
-  .howWeWork__inner {
-    display: flex;
-    flex-direction: column;
-  }
   .howWeWork__title {
-    padding-right: 40px;
+    margin-bottom: 40px;
   }
   .howWeWork__list {
-    margin-top: 40px;
-    width: 100%;
-    padding-left: 28px;
-    overflow-y: hidden;
-    padding-bottom: 40px;
-    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
   }
   .howWeWork__list-item {
+    @include flex();
+    padding: 25px 20px 25px 85px;
+    border: 1px solid $primary-300;
     position: relative;
-    @include flex(flex-start, flex-start);
-    &:not(:first-child) {
-      margin-top: 64px;
-    }
-    span {
-      position: absolute;
-      left: -28px;
-      top: 50%;
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: $primary-200;
-      transition: $transition;
-    }
-    &::before {
-      content: '';
-      position: absolute;
-      left: -23px;
-      bottom: 5px;
-      height: 95px;
-      width: 2px;
-      background-color: $primary-200;
-    }
-    &::after {
-      content: '';
-      position: absolute;
-      left: -23px;
-      bottom: 5px;
-      height: 95px;
-      width: 2px;
-      background-color: $primary-400;
-      transform-origin: top;
-      transform: scaleY(0);
-      transition: $transition;
-    }
   }
-  .howWeWork__list-item.active {
-    span {
-      background-color: $primary-400;
-    }
-    &::after {
-      transform: scaleY(1);
-    }
-    .howWeWork__item-image {
-      width: 32px;
-    }
-    .howWeWork__item-title {
-      color: $primary-950;
-    }
+  .howWeWork__item-num {
+    color: $primary-100;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
   }
-  .howWeWork__list-item:last-child::before {
-    bottom: -31px;
-    height: 131px;
-  }
-  .howWeWork__list-item:last-child::after {
-    bottom: -31px;
-    height: 131px;
-  }
-  .howWeWork__item-image {
-    width: 0;
-    height: 32px;
-    margin-right: 16px;
-    transition: width ease-in-out 0.8s;
-  }
-  .howWeWork__item-title {
-    width: 274px;
-    height: 32px;
-    color: $primary-200;
-    transition: color ease-in-out 0.8s;
-  }
-
-  @include phone {
-    .howWeWork__item-title {
-      width: 504px;
-    }
+  .howWeWork__item-main {
+    text-align: center;
   }
 
   @include table {
-    padding-bottom: 152px;
-    .howWeWork__item-title {
-      width: 100%;
+    padding-bottom: 120px;
+    .howWeWork__title {
+      margin-bottom: 68px;
+    }
+    .howWeWork__list {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
   }
 
   @include desktop {
     padding-bottom: 240px;
-    .blockich {
-      max-width: 600px;
-    }
     .howWeWork__list {
-      margin-bottom: 80px;
-      padding-left: 48px;
-      margin-top: 80px;
+      grid-template-columns: repeat(3, 1fr);
     }
-    .howWeWork__list-item {
-      &:not(:first-child) {
-        margin-top: 200px;
-      }
-      span {
-        width: 16px;
-        height: 16px;
-        left: -48px;
-      }
-      &::before {
-        left: -42px;
-        bottom: 24px;
-        width: 4px;
-        height: 232px;
-      }
-      &::after {
-        left: -42px;
-        bottom: 24px;
-        width: 4px;
-        height: 232px;
-      }
-    }
-    .howWeWork__list-item:last-child::before {
-      left: -42px;
-      bottom: -4px;
-      width: 4px;
-      height: 260px;
-    }
-    .howWeWork__list-item:last-child::after {
-      bottom: -4px;
-      height: 260px;
-    }
-    .howWeWork__item-image {
-      margin-right: 20px;
-      height: 48px;
-    }
-    .howWeWork__list-item.active {
-      .howWeWork__item-image {
-        width: 48px;
-      }
-    }
-  }
-
-  @include desktop {
-    .howWeWork__inner {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-    .howWeWork__title {
-      position: sticky;
-      top: 150px;
-      height: fit-content;
-    }
-    .howWeWork__list {
-      width: 920px;
-      margin-top: 40px;
+    .howWeWork__item {
+      font-size: 20px;
+      line-height: 36px;
     }
   }
 }
