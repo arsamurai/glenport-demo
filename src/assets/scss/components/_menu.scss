@@ -17,6 +17,7 @@
 	&__list {
 		display: flex;
 		flex-direction: column;
+		margin-top: -50px;
 	}
   &__list-item {
     font-size: 24px;
@@ -43,6 +44,7 @@
 		transform: translateX(0);
 		&__list {
 			flex-direction: row;
+			margin-top: 0;
 		}
 		&__list-item {
 			font-size: 18px;
